@@ -1,0 +1,10 @@
+{
+	"name": "xtfUI",
+	"version": "0.0.1",
+	"description": "Christoph Saxe's personal Front End boilerplate.",
+	"repository": "https://github.com/stoff/xtfUI",
+	"license": "MIT",
+	"devDependencies": {
+		"gulp": "^3.9.1"
+	}
+}
