@@ -1,5 +1,7 @@
 @import 'susy';
 
+@import 'functions';
+
 body {
 	@include container(1440px);
 @import 'normalize';
