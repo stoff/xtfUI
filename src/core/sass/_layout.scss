@@ -1,0 +1,70 @@
+$layoutMaxWidth: rem(1440);
+$containerPadding: rem(20);
+$minColumnWidth: rem(240);
+$mediumWidth: ($minColumnWidth + ($containerPadding * 2)) * 3;
+
+$blueGrey: #98AFC7;
+$peaGreen: #89C35C;
+$cornYellow: #FFF380;
+
+
+
+.container {} // outer wrap
+.layout { // effectively, a row - nests in a .layout
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 auto;
+
+	// set by variables
+	max-width: $layoutMaxWidth;
+	padding: 0 $containerPadding;
+
+	// utility
+	&.reverse {
+		flex-direction: row-reverse;
+	}
+}
+
+.layout-column {
+	flex-grow: 1;
+
+	// set by variables
+	margin-top: $containerPadding;
+	padding: $containerPadding;
+}
+.layout-21{
+	>:first-child {
+		background: $blueGrey;
+		flex-grow: 2;
+		width: 426px;
+	}
+	>:last-child {
+		background: $peaGreen;
+		flex-grow: 1;
+		width: 214px;
+	}
+}
+.layout-121 {
+	> * {
+		background: $peaGreen;
+		flex-grow: 1;
+		width: 160px;
+	}
+	>:first-child {
+		background: $blueGrey;
+		flex-grow: 2;
+		width: 320px;
+	}
+	>:nth-child(2) {
+		background: $cornYellow;
+		order: -1;
+	}
+}
+
+@media screen and (min-width: 640px) {
+	.layout-column {
+		// flex-basis: auto;
+		// flex-grow: 0;
+	}
+}
